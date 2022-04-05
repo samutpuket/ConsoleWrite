@@ -1,0 +1,2 @@
+# ConsoleWrite
+; Received Data from SciTE Func MY_WM_COPYDATA($hWnd, $msg, $wParam, $lParam)     Local $COPYDATA = DllStructCreate('Ptr;DWord;Ptr', $lParam)     Local $SciTECmdLen = DllStructGetData($COPYDATA, 2)     Local $CmdStruct = DllStructCreate('Char[' &amp; $SciTECmdLen + 1 &amp; ']', DllStructGetData($COPYDATA, 3))     Local $SciTECmd = StringLeft(DllStructGetData($CmdStruct, 1), $SciTECmdLen)     ConsoleWrite('&lt;--' &amp; StringFormat($SciTECmd) &amp; @LF) EndFunc   ;==>MY_WM_COPYDATA
